@@ -1,0 +1,16 @@
+# Log files
+logs/
+airflow/
+
+# Output data
+output_data/
+
+# Spark temporary files
+/tmp/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# System files
+.DS_Store
