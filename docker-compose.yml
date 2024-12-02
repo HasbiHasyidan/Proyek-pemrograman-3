@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  airflow:
+    build: ./docker
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./pyspark_jobs:/jobs
+      - ./input_data:/input_data
+      - ./output_data:/output_data
+      - ./visualizations:/visualizations
+  pyspark:
+    image: bitnami/spark:latest
+    volumes:
+      - ./pyspark_jobs:/jobs
+      - ./input_data:/input_data
+      - ./output_data:/output_data
